@@ -1,0 +1,85 @@
+.login-container {
+  max-width: 300px;
+  margin: 60px auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #22223b;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.login-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login-container label {
+  font-size: 1rem;
+  color: #4a4e69;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f8f8fa;
+  transition: border 0.2s;
+}
+
+.login-container input:focus {
+  border: 1.5px solid #5f6fff;
+  outline: none;
+}
+
+.login-container button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.8rem 0;
+  background: linear-gradient(90deg, #5f6fff 60%, #4ea8de 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(94,111,255,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.login-container button[type="submit"]:hover {
+  background: linear-gradient(90deg, #4ea8de 60%, #5f6fff 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.login-container button[type="button"]:hover {
+  background: linear-gradient(90deg, #3aa392 60%, #1a997d 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.login-container button[type="button"] {
+  margin-top: 0.5rem;
+  padding: 0.8rem 0;
+  background: linear-gradient(90deg, #3aa392 60%, #1a997d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(94,111,255,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
