@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { ToastService } from '../services/toast.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
     selector: 'app-home',
     templateUrl: './login.html',
     styleUrls: ['./login.css'],
-    imports: [ReactiveFormsModule, CommonModule],
+    imports: [ReactiveFormsModule, CommonModule, RouterLink],
 })
 export class Login implements OnInit {
     loginForm!: FormGroup;
