@@ -1,0 +1,170 @@
+.inicio-arriba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+
+.btn-modern {
+  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.25em;
+  font-weight: 700;
+  padding: 0.9em 2.2em;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-modern:hover {
+  background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(99,102,241,0.18);
+}
+.juego-mayor-menor {
+  text-align: center;
+  padding: 20px;
+}
+
+.titulo-seccion h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #1e293b;
+  text-shadow: 0 0 5px #709da8;
+}
+
+.contenido-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.carta-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.botones {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-image: linear-gradient(to top, #f4f1ee, #fff);
+  border-radius: 50%;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  user-select: none;
+}
+
+.button:hover {
+  background-image: linear-gradient(to top, #fff, #f4f1ee);
+  color: #0088cc;
+}
+
+.button:active {
+  background-image: linear-gradient(to top, #efedec, #f7f4f4);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4),
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+.button.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* also style native disabled state on buttons */
+.button[disabled], .button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.inicio {
+  margin-top: 30px;
+}
+/* Botón volver al home */
+.volver-home-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.10);
+  transition: background 0.2s, transform 0.1s;
+  z-index: 10;
+}
+.volver-home-btn:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.btn:hover {
+  transform: translate(0.5em, -0.5em);
+  box-shadow: -1em 1em 0.15em rgba(16, 24, 50, 0.1);
+}
+.cronometro p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.tiempo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1e293b;
+  text-shadow: 0 0 5px #000000;
+  margin-top: 10px;
+}
+.cronometro {
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+}
+
+.reloj-gif {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}

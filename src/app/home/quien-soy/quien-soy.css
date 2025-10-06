@@ -1,0 +1,50 @@
+.quien-soy-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.quien-soy-container h1 {
+    text-align: center;
+    color: #1976d2;
+    margin-bottom: 1.5rem;
+}
+.profile-img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #1976d2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.quien-soy-container section {
+    text-align: center;
+}
+.quien-soy-container p {
+    margin: 1rem 0;
+    color: #444;
+}
+.quien-soy-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+    text-align: left;
+    display: inline-block;
+}
+.quien-soy-container li {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+}
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}

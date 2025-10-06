@@ -1,0 +1,49 @@
+<!-- Chat Panel -->
+  <div class="chat-panel" [class.visible]="isChatVisible">
+    <div class="chat-header">
+      <h3>💬 Chat General</h3>
+      <div class="connection-status">
+        <span [title]="connectionStatus">{{ getConnectionIndicator() }}</span>
+        <button (click)="forceReconnect()" class="reconnect-btn" title="Reconectar">🔄</button>
+      </div>
+      <button (click)="toggleChat()" class="close-btn">✖</button>
+    </div>
+    
+    <div class="chat-messages" #chatMessages>
+      <div *ngFor="let message of messages; trackBy: trackByMessageId" class="message" 
+           [class.own-message]="message.user_email === user?.email">
+        <div class="message-header">
+          <span class="user">
+            <img *ngIf="getBanderaPais(message.user_email)" [src]="getBanderaPais(message.user_email)" width="20" height="15" style="vertical-align: middle; margin-right: 4px; border-radius:2px;">
+            {{ message.user_email }}
+            <span *ngIf="getNombrePais(message.user_email)" class="pais-nombre">({{ getNombrePais(message.user_email) }})</span>
+          </span>
+          <span class="time">{{ message.created_at | date:'short' }}</span>
+        </div>
+        <div class="message-content">{{ message.content }}</div>
+      </div>
+      <div *ngIf="messages.length === 0" class="no-messages">
+        No hay mensajes aún. ¡Sé el primero en escribir algo! 🎮
+      </div>
+    </div>
+    
+    <div class="chat-input">
+      <input 
+        type="text" 
+        [(ngModel)]="newMessage" 
+        (keypress)="onKeyPress($event)"
+        placeholder="Escribe tu mensaje..."
+        class="message-input"
+        maxlength="500">
+      <button (click)="sendMessage()" class="send-btn">
+        ENVIAR
+      </button>
+    </div>
+  </div>
+
+  <!-- Indicador cuando el chat está cerrado -->
+  <div *ngIf="!isChatVisible" class="chat-closed-indicator">
+    <button (click)="toggleChat()" class="chat-indicator-btn">
+      💬 Abrir Chat
+    </button>
+  </div>

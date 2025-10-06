@@ -25,6 +25,49 @@
         La contraseña debe tener al menos 6 caracteres.
       </div>
     </div>
+    <div>
+      <label for="confirmPassword">Confirmar contraseña:</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        formControlName="confirmPassword"
+        required
+      >
+      <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" style="color: #e63946; font-size: 0.9em;">
+        Debes confirmar la contraseña.
+      </div>
+      <div *ngIf="registerForm.hasError('passwordsMismatch') && registerForm.get('confirmPassword')?.touched" style="color: #e63946; font-size: 0.9em;">
+        Las contraseñas no coinciden.
+      </div>
+    </div>
+    <div class="pais-dropdown-group">
+      <label for="pais">País:</label>
+      <div class="pais-dropdown" [class.open]="showDropdown" (click)="showDropdown = !showDropdown" tabindex="0" (blur)="showDropdown = false">
+        <div class="pais-selected">
+          <ng-container *ngIf="registerForm.get('pais')?.value; else placeholder">
+            <img
+              [src]="getBanderaSeleccionada()"
+              width="24" height="18" style="vertical-align: middle; margin-right: 8px; border-radius:3px;">
+            {{ getPaisSeleccionado()?.nombre }}
+          </ng-container>
+          <ng-template #placeholder>
+            <span class="pais-placeholder">Selecciona tu país</span>
+          </ng-template>
+          <span class="dropdown-arrow">▼</span>
+        </div>
+        <ul class="pais-list" *ngIf="showDropdown">
+          <li *ngFor="let pais of paises" (click)="registerForm.get('pais')?.setValue(pais.codigo); showDropdown = false" [class.selected]="registerForm.get('pais')?.value === pais.codigo">
+            <img
+              [src]="'https://flagcdn.com/24x18/' + pais.codigo + '.png'"
+              width="24" height="18" style="vertical-align: middle; margin-right: 8px; border-radius:3px;">
+            {{ pais.nombre }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="registerForm.get('pais')?.invalid && registerForm.get('pais')?.touched" style="color: #e63946; font-size: 0.9em;">
+        Selecciona un país.
+      </div>
+    </div>
     <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
     <div *ngIf="registerError" style="color: #e63946; margin-top: 1em;">
       {{ registerError }}

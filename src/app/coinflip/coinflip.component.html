@@ -1,0 +1,36 @@
+<button class="volver-home-btn" routerLink="/home" title="Volver al inicio" (click)="volver()">
+    <span style="font-size:1.5em;vertical-align:middle;">&#8592;</span> Home
+</button>
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 32px; margin-bottom: 24px;">
+  <div id="blue" class="amount" style="display: flex; flex-direction: column; align-items: center;">
+    <span style="font-size: 0.5em; display: block;">Aciertos</span>
+    <span style="font-size: 1em; margin-top: 8px; text-align: center;">{{ aciertos }}</span>
+  </div>
+  <div id="red" class="amount" style="display: flex; flex-direction: column; align-items: center;">
+    <span style="font-size: 0.5em; display: block;">Errores</span>
+    <span style="font-size: 1em; margin-top: 8px; text-align: center;">{{ errores }}</span>
+  </div>
+</div>
+
+<div id="coin" (click)="onFlipCoin(coin)" #coin [class.flipping]="isFlipping">
+  <div id="front"></div>
+  <div id="back"></div>
+</div>
+
+<div class="coinflip-botones">
+  <button
+    type="button"
+    (click)="seleccionar('rojo')"
+    [ngClass]="{ seleccionado: seleccion === 'rojo', rojo: true }"
+  >
+    Rojo
+  </button>
+  <button
+    type="button"
+    (click)="seleccionar('azul')"
+    [ngClass]="{ seleccionado: seleccion === 'azul', azul: true }"
+  >
+    Azul
+  </button>
+</div>
+

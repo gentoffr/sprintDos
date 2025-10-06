@@ -1,2 +1,4 @@
 <app-toast></app-toast>
+<app-chat *ngIf="(user$ | async) as user; else noChat" [user]="user" [hidden]="currentRoute === '/login' || currentRoute === '/registro'"></app-chat>
+<ng-template #noChat></ng-template>
 <router-outlet />

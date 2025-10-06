@@ -2,27 +2,11 @@
   <div class="logo">Dragon bolseta</div>
   <ul class="nav-links">
     <li>Hola, {{ user?.email }}</li>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/about">Acerca</a></li>
-    <li><a routerLink="/contact">Contacto</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/home/juegos" >Sala de juegos</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/home/quien-soy" >¿Quien soy?</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/contact" >Contacto</a></li>
     <li><button type="button" (click)="logout()">Cerrar Sesión </button></li>
   </ul>
 </nav>
 
-<main class="container">
-  <h1>Bienvenido</h1>
-  <div class="game-grid">
-    <div class="game-card">
-      <h2>Juego 1</h2>
-    </div>
-    <div class="game-card">
-      <h2>Juego 2</h2>
-    </div>
-    <div class="game-card">
-      <h2>Juego 3</h2>
-    </div>
-    <div class="game-card">
-      <h2>Juego 4</h2>
-    </div>
-  </div>
-</main>
+<router-outlet></router-outlet>

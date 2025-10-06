@@ -1,0 +1,8 @@
+{
+  "/translate": {
+    "target": "https://libretranslate.de",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

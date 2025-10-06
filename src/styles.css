@@ -4,3 +4,6 @@ html, body {
   padding: 0;
   overflow-x: hidden; /* oculta cualquier desbordamiento horizontal */
 }
+.body-class::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

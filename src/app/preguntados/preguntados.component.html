@@ -1,0 +1,36 @@
+<button class="volver-home-btn" routerLink="/home" title="Volver al inicio" (click)="volver()">
+    <span style="font-size:1.5em;vertical-align:middle;">&#8592;</span> Home
+  </button>
+<div class="preguntados-container">
+  <h1>Preguntados</h1>
+
+  <div class="descripcion">
+    <h2>{{ pregunta() }}</h2>
+  </div>
+  
+  <div class="opciones-container">
+    <div *ngFor="let opcion of respuestas()" class="opcion">
+      <button
+        (click)="responder(opcion)"
+        [disabled]="seleccion() !== null"
+        [ngClass]="{
+          correcta: seleccion() && opcion === correcta(),
+          incorrecta:
+            seleccion() && opcion === seleccion() && opcion !== correcta()
+        }"
+      >
+        {{ opcion }}
+      </button>
+    </div>
+  </div>
+
+  <p *ngIf="resultado()" class="resultado-text">{{ resultado() }}</p>
+
+  <button (click)="siguientePregunta()" class="siguiente-pregunta" [disabled]="cargandoPregunta()">
+    {{ cargandoPregunta() ? 'Cargando pregunta...' : 'Siguiente Pregunta' }}
+  </button>
+
+  <div class="marcador">
+    <p>✅ Aciertos: {{ aciertos() }} | ❌ Errores: {{ errores() }}</p>
+  </div>
+</div>

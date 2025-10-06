@@ -32,7 +32,7 @@ export class Login implements OnInit {
         if (form.valid) {
             await this.authService.login(email, password).then(({ error }) => {
                 if (error) {
-                    alert('Error en el login: ' + error.message);
+                    this.tostada.show('Credenciales incorrectas', 'error');
                     console.log(email, password)
                     return;
                 }

@@ -1,3 +1,66 @@
+
+/* Dropdown moderno de países */
+.pais-dropdown-group {
+  margin-bottom: 1.2rem;
+}
+.pais-dropdown {
+  position: relative;
+  width: 100%;
+  background: #f8f8fa;
+  border: 1.5px solid #c9c9c9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border 0.2s;
+  min-height: 44px;
+  outline: none;
+}
+.pais-dropdown.open, .pais-dropdown:focus {
+  border: 1.5px solid #5f6fff;
+  box-shadow: 0 2px 8px rgba(94,111,255,0.08);
+}
+.pais-selected {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  color: #22223b;
+  user-select: none;
+}
+.pais-placeholder {
+  color: #aaa;
+}
+.dropdown-arrow {
+  margin-left: auto;
+  font-size: 1.1em;
+  color: #888;
+}
+.pais-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 10;
+  background: #fff;
+  border: 1.5px solid #5f6fff;
+  border-radius: 0 0 8px 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(94,111,255,0.13);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pais-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.15s;
+}
+.pais-list li.selected, .pais-list li:hover {
+  background: #f0f4ff;
+}
 .login-container {
   max-width: 350px;
   margin: 60px auto;

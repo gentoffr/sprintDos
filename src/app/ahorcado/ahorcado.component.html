@@ -1,0 +1,78 @@
+<div class="ahorcado-container">
+  <button class="volver-home-btn" routerLink="/home" title="Volver al inicio" (click)="volver()">
+    <span style="font-size:1.5em;vertical-align:middle;">&#8592;</span> Home
+  </button>
+  <div class="titulo-seccion">
+    <h1>Ahorcado</h1>
+  </div>
+
+  <div *ngIf="!(juegoTerminado && intentosRestantes === 0)">
+    <div class="juego-layout">
+      <div class="contenedor-palabra">
+        <p class="palabra">{{ palabraOculta }}</p>
+      </div>
+      <div class="imagen-ahorcado">
+        <img src="/ahorcado/01.png" class="pieza visible" />
+        <img src="/ahorcado/02.png" class="pieza pieza-ajustada" [class.visible]="errores == 1" />
+        <img src="/ahorcado/03.png" class="pieza pieza-ajustada" [class.visible]="errores == 2" />
+        <img src="/ahorcado/04.png" class="pieza pieza-ajustada" [class.visible]="errores == 3" />
+        <img src="/ahorcado/05.png" class="pieza pieza-ajustada" [class.visible]="errores == 4" />
+        <img src="/ahorcado/06.png" class="pieza pieza-ajustada" [class.visible]="errores == 5" />
+        <img
+          src="/ahorcado/07.png"
+          class="pieza pieza-ajustada"
+          [class.visible]="intentosRestantes === 0"
+        />
+      </div>
+    </div>
+
+    <div class="teclado">
+      <div class="fila">
+        <div
+          *ngFor="let letra of fila1"
+          class="button"
+          (click)="seleccionarLetra(letra)"
+          [class.disabled]="juegoTerminado || letrasSeleccionadas.includes(letra)"
+        >
+          <span>{{ letra }}</span>
+        </div>
+      </div>
+      <div class="fila">
+        <div
+          *ngFor="let letra of fila2"
+          class="button"
+          (click)="seleccionarLetra(letra)"
+          [class.disabled]="juegoTerminado || letrasSeleccionadas.includes(letra)"
+        >
+          <span>{{ letra }}</span>
+        </div>
+      </div>
+      <div class="fila">
+        <div
+          *ngFor="let letra of fila3"
+          class="button"
+          (click)="seleccionarLetra(letra)"
+          [class.disabled]="juegoTerminado || letrasSeleccionadas.includes(letra)"
+        >
+          <span>{{ letra }}</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Intentos restantes: {{ intentosRestantes }}</p>
+    <p>Aciertos: {{ aciertos }}</p>
+    <p>Errores: {{ errores }}</p>
+    <p>Errores totales: {{ erroresTotales }}</p>
+  </div>
+
+  <div *ngIf="juegoTerminado && intentosRestantes === 0" class="resultado-final">
+    <h1>¡Perdiste!</h1>
+    <div class="imagen-ahorcado">
+      <img src="/ahorcado/01.png" class="visible" />
+      <img src="/ahorcado/07.png" class="visible final" />
+    </div>
+    <p>Aciertos: {{ aciertos }}</p>
+    <p>Errores: {{ errores }}</p>
+    <button class="btn" (click)="inicializarJuego()">Jugar de nuevo</button>
+  </div>
+</div>

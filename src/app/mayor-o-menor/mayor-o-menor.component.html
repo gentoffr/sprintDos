@@ -1,0 +1,40 @@
+<div class="juego-mayor-menor">
+  <div class="titulo-seccion">
+    <h1>Juego: Mayor o Menor</h1>
+  </div>
+  <button class="volver-home-btn" routerLink="/home" title="Volver al inicio" (click)="volver()">
+    <span style="font-size:1.5em;vertical-align:middle;">&#8592;</span> Home
+  </button>
+  <div *ngIf="!jugando" class="inicio inicio-arriba">
+    <a class="btn btn-modern" (click)="iniciarJuego()">
+      <span style="font-size:1.3em;vertical-align:middle;">&#9654;</span> Iniciar Juego
+    </a>
+  </div>
+
+  <p class="tiempo"> {{ tiempo }} segundos</p>
+
+  <div class="contenido-juego">
+    <div class="carta">
+      <img
+        [src]="cartaActual ? cartaActual.image : ''"
+        alt="Carta actual"
+        class="carta-img"
+      />
+    </div>
+
+    <div class="botones">
+      <button class="button" (click)="adivinarMayor()" [disabled]="!isCardReady" [attr.aria-disabled]="!isCardReady">
+        <span>Mayor</span>
+      </button>
+      <button class="button" (click)="adivinarMenor()" [disabled]="!isCardReady" [attr.aria-disabled]="!isCardReady">
+        <span>Menor</span>
+      </button>
+    </div>
+
+    <div *ngIf="mensaje" class="mensaje">
+      <p>{{ mensaje }}</p>
+    </div>
+
+    <!-- El botón de inicio ahora está arriba -->
+  </div>
+</div>
